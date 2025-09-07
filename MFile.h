@@ -60,7 +60,7 @@ MFile_PutContents(LPCTSTR pszFile, LPCVOID pv, size_t cb)
     if (hFile == INVALID_HANDLE_VALUE)
     {
         assert(0);
-        return NULL;
+        return FALSE;
     }
 
     DWORD cbWritten;

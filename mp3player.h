@@ -225,9 +225,9 @@ inline BOOL ConvertMp3ToWaveDx(std::string& bin, LPBYTE& pb, DWORD& cb)
 
     ZeroMemory(&ash, sizeof(ash));
     ash.cbStruct        = sizeof(ash);
-    ash.pbSrc           = &mp3_buf[0];
+    ash.pbSrc           = (PBYTE)&mp3_buf[0];
     ash.cbSrcLength     = DWORD(wfmp3.nBlockSize + 1);
-    ash.pbDst           = &wav_buf[0];
+    ash.pbDst           = (PBYTE)&wav_buf[0];
     ash.cbDstLength     = cbWavBuf;
 
     if (::acmStreamPrepareHeader(has, &ash, 0))
