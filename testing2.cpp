@@ -5,11 +5,11 @@
 int main(void)
 {
     int result;
-    result = mciSendString(TEXT("open sample.mp3 type mpegvideo"), NULL, 0, 0);
+    result = mciSendString(TEXT("open \".\\sample.mp3\" type mpegvideo alias myaudio"), NULL, 0, 0);
     printf("result: %d\n", result);
-    result = mciSendString(TEXT("play sample.mp3 wait"), NULL, 0, 0);
+    result = mciSendString(TEXT("play myaudio wait"), NULL, 0, 0);
     printf("result: %d\n", result);
-    result = mciSendString(TEXT("close sample.mp3"), NULL, 0, 0);
+    result = mciSendString(TEXT("close myaudio"), NULL, 0, 0);
     printf("result: %d\n", result);
     return 0;
 }
